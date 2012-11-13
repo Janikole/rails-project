@@ -1,0 +1,33 @@
+<h1>Listing orders</h1>
+
+<table>
+  <tr>
+    <th>Cust</th>
+    <th>Gst rate</th>
+    <th>Pst rate</th>
+    <th>Hst rate</th>
+    <th>Status</th>
+    <th>Payment method</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @orders.each do |order| %>
+  <tr>
+    <td><%= order.cust_id %></td>
+    <td><%= order.gst_rate %></td>
+    <td><%= order.pst_rate %></td>
+    <td><%= order.hst_rate %></td>
+    <td><%= order.status %></td>
+    <td><%= order.payment_method %></td>
+    <td><%= link_to 'Show', order %></td>
+    <td><%= link_to 'Edit', edit_order_path(order) %></td>
+    <td><%= link_to 'Destroy', order, confirm: 'Are you sure?', method: :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Order', new_order_path %>

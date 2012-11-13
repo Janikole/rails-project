@@ -1,0 +1,20 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Gst rate:</b>
+  <%= @province.gst_rate %>
+</p>
+
+<p>
+  <b>Pst rate:</b>
+  <%= @province.pst_rate %>
+</p>
+
+<p>
+  <b>Hst rate:</b>
+  <%= @province.hst_rate %>
+</p>
+
+
+<%= link_to 'Edit', edit_province_path(@province) %> |
+<%= link_to 'Back', provinces_path %>

@@ -1,0 +1,27 @@
+<h1>Listing provinces</h1>
+
+<table>
+  <tr>
+    <th>Gst rate</th>
+    <th>Pst rate</th>
+    <th>Hst rate</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @provinces.each do |province| %>
+  <tr>
+    <td><%= province.gst_rate %></td>
+    <td><%= province.pst_rate %></td>
+    <td><%= province.hst_rate %></td>
+    <td><%= link_to 'Show', province %></td>
+    <td><%= link_to 'Edit', edit_province_path(province) %></td>
+    <td><%= link_to 'Destroy', province, confirm: 'Are you sure?', method: :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Province', new_province_path %>
