@@ -12,7 +12,7 @@
 
 <p>
   <b>Price:</b>
-  <%= @product.price %>
+  <%= number_with_precision(@product.price, :precision => 2) %>
 </p>
 
 <p>
