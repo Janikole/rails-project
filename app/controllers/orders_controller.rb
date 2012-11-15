@@ -1,4 +1,4 @@
-class OrdersController < ApplicationController
+class OrdersController < AdminController
   # GET /orders
   # GET /orders.json
   def index

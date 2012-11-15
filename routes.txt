@@ -1,0 +1,35 @@
+         provinces GET    /provinces(.:format)               provinces#index
+                   POST   /provinces(.:format)               provinces#create
+      new_province GET    /provinces/new(.:format)           provinces#new
+     edit_province GET    /provinces/:id/edit(.:format)      provinces#edit
+          province GET    /provinces/:id(.:format)           provinces#show
+                   PUT    /provinces/:id(.:format)           provinces#update
+                   DELETE /provinces/:id(.:format)           provinces#destroy
+         customers GET    /customers(.:format)               customers#index
+                   POST   /customers(.:format)               customers#create
+      new_customer GET    /customers/new(.:format)           customers#new
+     edit_customer GET    /customers/:id/edit(.:format)      customers#edit
+          customer GET    /customers/:id(.:format)           customers#show
+                   PUT    /customers/:id(.:format)           customers#update
+                   DELETE /customers/:id(.:format)           customers#destroy
+            orders GET    /orders(.:format)                  orders#index
+                   POST   /orders(.:format)                  orders#create
+         new_order GET    /orders/new(.:format)              orders#new
+        edit_order GET    /orders/:id/edit(.:format)         orders#edit
+             order GET    /orders/:id(.:format)              orders#show
+                   PUT    /orders/:id(.:format)              orders#update
+                   DELETE /orders/:id(.:format)              orders#destroy
+    order_products GET    /order_products(.:format)          order_products#index
+                   POST   /order_products(.:format)          order_products#create
+ new_order_product GET    /order_products/new(.:format)      order_products#new
+edit_order_product GET    /order_products/:id/edit(.:format) order_products#edit
+     order_product GET    /order_products/:id(.:format)      order_products#show
+                   PUT    /order_products/:id(.:format)      order_products#update
+                   DELETE /order_products/:id(.:format)      order_products#destroy
+          products GET    /products(.:format)                products#index
+                   POST   /products(.:format)                products#create
+       new_product GET    /products/new(.:format)            products#new
+      edit_product GET    /products/:id/edit(.:format)       products#edit
+           product GET    /products/:id(.:format)            products#show
+                   PUT    /products/:id(.:format)            products#update
+                   DELETE /products/:id(.:format)            products#destroy

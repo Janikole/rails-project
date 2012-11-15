@@ -1,0 +1,8 @@
+<%= render :partial => 'nav' %>
+
+<% @products.each do |prod|%>
+  <%= render :partial => 'store', :object => prod, :as => 'product' %>
+  <%= link_to 'Show', store_path(prod) %>
+  <br /><br />
+<% end %>
+

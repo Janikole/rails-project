@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121113182022) do
+ActiveRecord::Schema.define(:version => 20121115024809) do
 
   create_table "customers", :force => true do |t|
     t.integer  "province_id"
@@ -55,11 +55,12 @@ ActiveRecord::Schema.define(:version => 20121113182022) do
   end
 
   create_table "provinces", :force => true do |t|
-    t.decimal  "gst_rate"
-    t.decimal  "pst_rate"
-    t.decimal  "hst_rate"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+    t.decimal  "gst_rate",   :precision => 4, :scale => 3
+    t.decimal  "pst_rate",   :precision => 4, :scale => 3
+    t.decimal  "hst_rate",   :precision => 4, :scale => 3
+    t.datetime "created_at",                               :null => false
+    t.datetime "updated_at",                               :null => false
+    t.string   "name"
   end
 
 end

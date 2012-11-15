@@ -1,4 +1,12 @@
 Project::Application.routes.draw do
+  
+  root :to => 'store#index'
+  match 'store/:id' => 'store#show', :as => 'store', :via => :get
+  
+  match 'admin' => 'products#index', :via => :get
+  
+  match 'about' => 'store#about', :via => :get
+
   resources :provinces
 
   resources :customers

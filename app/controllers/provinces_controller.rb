@@ -1,4 +1,4 @@
-class ProvincesController < ApplicationController
+class ProvincesController < AdminController
   # GET /provinces
   # GET /provinces.json
   def index
