@@ -1,3 +1,10 @@
+              root        /                                  store#index
+             store GET    /store/:id(.:format)               store#show
+             admin GET    /admin(.:format)                   products#index
+             about GET    /about(.:format)                   store#about
+              cart GET    /cart(.:format)                    store#cart
+          purchase GET    /purchase(.:format)                store#purchase
+  purchase_product GET    /purchase/:id(.:format)            store#purchase
          provinces GET    /provinces(.:format)               provinces#index
                    POST   /provinces(.:format)               provinces#create
       new_province GET    /provinces/new(.:format)           provinces#new

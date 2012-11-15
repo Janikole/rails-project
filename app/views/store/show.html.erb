@@ -1,3 +1,6 @@
+<%= render :partial => 'nav' %>
 <%= render :partial => 'store', :object => @product, :as => 'product' %>
+<br />
+<%= link_to 'Purchase', purchase_product_path(@product) %>
 <br />
 <%= link_to 'Back to all Products', root_path %>
