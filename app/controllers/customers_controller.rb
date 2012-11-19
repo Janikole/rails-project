@@ -24,6 +24,7 @@ class CustomersController < AdminController
   # GET /customers/new
   # GET /customers/new.json
   def new
+    @product = Product.find(params[:prod])
     @customer = Customer.new
 
     respond_to do |format|

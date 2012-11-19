@@ -6,12 +6,6 @@ Project::Application.routes.draw do
   match 'admin' => 'products#index', :via => :get
   
   match 'about' => 'store#about', :via => :get
-  
-  match 'cart' => 'store#cart', :via => :get
-  
-  match 'purchase' => 'store#purchase', :via => :get
-  
-  match 'purchase/:id' => 'store#purchase', :as => 'purchase_product', :via => :get
 
   resources :provinces
 

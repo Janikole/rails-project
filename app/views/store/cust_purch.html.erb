@@ -1,0 +1,16 @@
+<%= render :partial => 'nav' %>
+
+
+<h3>Checkout</h3>
+<table>
+  <tr>
+    <th>Item:</th>
+    <td><%= @product.name %></td>
+  </tr>
+  <tr>
+    <th>Price:</th>
+    <td>$<%= @product.price.round(2) %></td>
+  </tr>
+  
+  <%= render :partial => 'form' %>
+</table>

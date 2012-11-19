@@ -1,5 +1,22 @@
-<h1>New customer</h1>
+<%= render :partial => 'nav' %>
+
+<h3>Checkout</h3>
+<table>
+  <tr>
+    <%= image_tag @product.image, :width => '80' %>
+  </tr>
+  <tr>
+    <th>Item:</th>
+    <td><%= @product.name %></td>
+  </tr>
+  <tr>
+    <th>Price:</th>
+    <td>$<%= @product.price.round(2) %></td>
+  </tr>
+</table>
+
+<h3>Enter customer information</h3>
 
 <%= render 'form' %>
 
-<%= link_to 'Back', customers_path %>
+

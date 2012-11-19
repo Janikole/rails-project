@@ -1,5 +1,10 @@
 <%= render :partial => 'nav' %>
 
+<%= link_to 'All Products', root_path(:filter => '') %>
+<%= link_to 'Booster Boxes', root_path(:filter => 'Booster Box') %>
+<%= link_to 'Intro Decks', root_path(:filter => 'Intro Deck') %>
+<%= link_to 'Event Decks', root_path(:filter => 'Event Deck') %><br /><br />
+
 <% @products.each do |prod|%>
   <%= render :partial => 'store', :object => prod, :as => 'product' %>
   <%= link_to 'Details', store_path(prod) %>
