@@ -13,6 +13,7 @@
 
 <% @provinces.each do |province| %>
   <tr>
+    <td><%= province.id %></td>
     <td><b><%= province.name %></b></td>
     <td><%= province.gst_rate.to_s.slice(0, 1) %>%</td>
     <td><%= province.pst_rate.to_s.slice(0, 1) %>%</td>

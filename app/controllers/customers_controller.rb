@@ -41,11 +41,20 @@ class CustomersController < AdminController
   # POST /customers
   # POST /customers.json
   def create
+    cust = params[:customer]
+    
+    cust[:province_id] = case params[:customer][:province_id]
+      when "BC" then 1
+      when "AB" then 2
+      when "SK" then 3
+      when "MB" then 4
+    end
+    
     @customer = Customer.new(params[:customer])
 
     respond_to do |format|
       if @customer.save
-        format.html { redirect_to @customer, notice: 'Customer was successfully created.' }
+        format.html { redirect_to new_order_path}
         format.json { render json: @customer, status: :created, location: @customer }
       else
         format.html { render action: "new" }
