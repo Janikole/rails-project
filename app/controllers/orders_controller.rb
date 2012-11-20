@@ -27,6 +27,15 @@ class OrdersController < AdminController
     @order = Order.new
     @cust_id = params[:cust_id]
     @product = session[:product]
+    @province = Province.find(Customer.find(@cust_id).province_id)
+    
+    @price = @product.price.round(2)
+    @gst = @province.gst_rate/100
+    @pst = @province.pst_rate/100
+    @hst = @province.hst_rate/100
+    
+    @total = @price * ((@gst + @pst + @hst) + 1)
+    
     respond_to do |format|
       format.html # new.html.erb
       format.json { render json: @order }

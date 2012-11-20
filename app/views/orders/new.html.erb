@@ -11,7 +11,27 @@
   </tr>
   <tr>
     <th>Price:</th>
-    <td>$<%= @product.price.round(2) %></td>
+    <td>$<%= @price %></td>
+  </tr>
+  <tr>
+    <th>Taxes:</th>
+    <td></td>
+  </tr>
+  <tr>
+    <td>GST</td>
+    <td>$<%= (@gst*@price).round(2) %></td>
+  </tr>
+  <tr>
+    <td>PST</td>
+    <td>$<%= (@pst*@price).round(2) %></td>
+  </tr>
+  <tr>
+    <td>HST</td>
+    <td>$<%= (@hst*@price).round(2) %></td>
+  </tr>
+  <tr>
+    <th>Total:</th>
+    <td>$<%= @total.round(2) %></td>
   </tr>
 </table>
 

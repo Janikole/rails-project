@@ -16,9 +16,9 @@
   <tr>
     <td><%= province.id %></td>
     <td><%= province.name %></td>
-    <td><%= province.gst_rate.to_s.slice(0, 1) %>%</td>
-    <td><%= province.pst_rate.to_s.slice(0, 1) %>%</td>
-    <td><%= province.hst_rate.to_s.slice(0, 1) %>%</td>
+    <td><%= province.gst_rate.to_s.slice(0, 4) %>%</td>
+    <td><%= province.pst_rate.to_s.slice(0, 4) %>%</td>
+    <td><%= province.hst_rate.to_s.slice(0, 4) %>%</td>
     <td><%= link_to 'Edit', edit_province_path(province) %></td>
   </tr>
 <% end %>
