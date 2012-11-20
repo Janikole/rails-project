@@ -27,13 +27,7 @@
     <td><%= customer.city %></td>
     <td><%= customer.postal_code %></td>
     <td><%= customer.email %></td>
-    <td><%= link_to 'Show', customer %></td>
-    <td><%= link_to 'Edit', edit_customer_path(customer) %></td>
-    <td><%= link_to 'Destroy', customer, confirm: 'Are you sure?', method: :delete %></td>
+    <td><%= link_to 'Destroy', customer, confirm: 'Are you sure? This will delete all orders associated with this customer.', method: :delete %></td>
   </tr>
 <% end %>
 </table>
-
-<br />
-
-<%= link_to 'New Customer', new_customer_path %>

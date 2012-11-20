@@ -19,6 +19,7 @@
 <% @orders.each do |order| %>
   <tr>
     <td><%= order.cust_id %></td>
+    <td><%= Customer.find(order.cust_id).f_name + " " + Customer.find(order.cust_id).l_name %></td>
     <td><%= order.gst_rate %></td>
     <td><%= order.pst_rate %></td>
     <td><%= order.hst_rate %></td>
@@ -31,7 +32,3 @@
   </tr>
 <% end %>
 </table>
-
-<br />
-
-<%= link_to 'New Order', new_order_path %>
