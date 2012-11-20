@@ -26,6 +26,8 @@ class CustomersController < AdminController
   def new
     @product = Product.find(params[:prod])
     @customer = Customer.new
+    
+    session[:product] = @product
 
     respond_to do |format|
       format.html # new.html.erb
@@ -43,23 +45,27 @@ class CustomersController < AdminController
   def create
     cust = params[:customer]
     
-    cust[:province_id] = case params[:customer][:province_id]
+    cust[:province_id] = case cust[:province_id]
       when "BC" then 1
       when "AB" then 2
       when "SK" then 3
       when "MB" then 4
     end
-    
-    @customer = Customer.new(params[:customer])
-
+        
     respond_to do |format|
-      if @customer.save
-        format.html { redirect_to new_order_path}
-        format.json { render json: @customer, status: :created, location: @customer }
+      if Customer.where(cust).empty?
+        @customer = Customer.new(cust)
+        if @customer.save
+          format.html { redirect_to new_order_path(:cust_id => @customer[:id])}
+          format.json { render json: @customer, status: :created, location: @customer }
+        else
+          format.html { render action: "new" }
+          format.json { render json: @customer.errors, status: :unprocessable_entity }
+        end
       else
-        format.html { render action: "new" }
-        format.json { render json: @customer.errors, status: :unprocessable_entity }
-      end
+        format.html { redirect_to new_order_path(:cust_id => Customer.where(cust).first)}
+        format.json { render json: @customer, status: :created, location: @customer }
+      end      
     end
   end
 

@@ -4,6 +4,7 @@
 
 <table>
   <tr>
+    <th>ID</th>
     <th>Province</th>
     <th>F name</th>
     <th>L name</th>
@@ -18,6 +19,7 @@
 
 <% @customers.each do |customer| %>
   <tr>
+    <td><%= customer.id %></td>
     <td><%= customer.province_id %></td>
     <td><%= customer.f_name %></td>
     <td><%= customer.l_name %></td>

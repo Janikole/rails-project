@@ -4,7 +4,8 @@
 
 <table>
   <tr>
-    <th>Cust</th>
+    <th>Customer ID</th>
+    <th>Customer Name</th>
     <th>Gst rate</th>
     <th>Pst rate</th>
     <th>Hst rate</th>
@@ -23,6 +24,7 @@
     <td><%= order.hst_rate %></td>
     <td><%= order.status %></td>
     <td><%= order.payment_method %></td>
+    <td><%= link_to 'Products Ordered', order_products_path(:order_id => order.id) %></td>
     <td><%= link_to 'Show', order %></td>
     <td><%= link_to 'Edit', edit_order_path(order) %></td>
     <td><%= link_to 'Destroy', order, confirm: 'Are you sure?', method: :delete %></td>

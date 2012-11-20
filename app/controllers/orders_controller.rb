@@ -25,7 +25,8 @@ class OrdersController < AdminController
   # GET /orders/new.json
   def new
     @order = Order.new
-
+    @cust_id = params[:cust_id]
+    @product = session[:product]
     respond_to do |format|
       format.html # new.html.erb
       format.json { render json: @order }
@@ -41,10 +42,11 @@ class OrdersController < AdminController
   # POST /orders.json
   def create
     @order = Order.new(params[:order])
+    @order.order_products.build
 
     respond_to do |format|
       if @order.save
-        format.html { redirect_to @order, notice: 'Order was successfully created.' }
+        format.html { redirect_to order_products_path}
         format.json { render json: @order, status: :created, location: @order }
       else
         format.html { render action: "new" }

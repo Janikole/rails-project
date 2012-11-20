@@ -2,6 +2,7 @@ class OrderProductsController < AdminController
   # GET /order_products
   # GET /order_products.json
   def index
+    #@order_products = OrderProduct.where("order_id = '"+params[:order_id]+"'")
     @order_products = OrderProduct.all
 
     respond_to do |format|
