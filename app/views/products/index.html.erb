@@ -23,7 +23,7 @@
     <td><%= number_with_precision(product.price, :precision => 2) %></td>
     <td><%= product.stock_quantity %></td>
     <td><%= link_to 'Edit', edit_product_path(product) %></td>
-    <td><%= link_to 'Destroy', product, confirm: 'Are you sure?', method: :delete %></td>
+    <td><%= link_to 'Delete', product, confirm: 'Are you sure?', method: :delete %></td>
   </tr>
 <% end %>
 </table>

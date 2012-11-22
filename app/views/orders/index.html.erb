@@ -27,7 +27,7 @@
     <td><%= order.payment_method %></td>
     <td><%= link_to 'Products Ordered', order_products_path(:order_id => order.id) %></td>
     <td><%= link_to 'Edit', edit_order_path(order) %></td>
-    <td><%= link_to 'Destroy', order, confirm: 'Are you sure?', method: :delete %></td>
+    <td><%= link_to 'Delete', order, confirm: 'Are you sure?', method: :delete %></td>
   </tr>
 <% end %>
 </table>
