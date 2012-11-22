@@ -6,6 +6,8 @@ Project::Application.routes.draw do
   match 'admin' => 'products#index', :via => :get
   
   match 'about' => 'store#about', :via => :get
+  
+  match 'summary' => 'store#summary', :via => :get
 
   resources :provinces
 

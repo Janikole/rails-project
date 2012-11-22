@@ -1,4 +1,5 @@
-class OrdersController < AdminController
+class OrdersController < ApplicationController
+  http_basic_authenticate_with :name => "admin", :password => "letmein", :only => [:index, :update, :destroy]
   # GET /orders
   # GET /orders.json
   def index
@@ -51,11 +52,15 @@ class OrdersController < AdminController
   # POST /orders.json
   def create
     @order = Order.new(params[:order])
-    @order.order_products.build
+    @order_product = @order.order_products.build
+    
+    @order_product[:product_id] = session[:product][:id]
+    @order_product[:quantity] = 1
+    @order_product[:price] = session[:product][:price]
 
     respond_to do |format|
       if @order.save
-        format.html { redirect_to order_products_path}
+        format.html { redirect_to summary_path(:order => @order)}
         format.json { render json: @order, status: :created, location: @order }
       else
         format.html { render action: "new" }

@@ -1,4 +1,5 @@
-class OrderProductsController < AdminController
+class OrderProductsController < ApplicationController
+  http_basic_authenticate_with :name => "admin", :password => "letmein", :only => [:index, :update, :destroy]
   # GET /order_products
   # GET /order_products.json
   def index

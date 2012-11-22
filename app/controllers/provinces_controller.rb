@@ -1,4 +1,5 @@
-class ProvincesController < AdminController
+class ProvincesController < ApplicationController
+  http_basic_authenticate_with :name => "admin", :password => "letmein"
   # GET /provinces
   # GET /provinces.json
   def index

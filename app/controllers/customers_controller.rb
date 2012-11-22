@@ -1,4 +1,5 @@
-class CustomersController < AdminController
+class CustomersController < ApplicationController
+  http_basic_authenticate_with :name => "admin", :password => "letmein", :only => [:index, :update, :destroy]
   # GET /customers
   # GET /customers.json
   def index
