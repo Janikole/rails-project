@@ -1,5 +1,6 @@
 <%= render :partial => 'nav' %>
-<%= render :partial => 'store', :object => @product, :as => 'product' %>
+<%= render :partial => 'store', :object => @product, :as => 'product' %><br />
+<%= @product.description %><br />
 <br />
 <%= link_to 'Purchase', new_customer_path(:prod => @product[:id]) %>
 <br />

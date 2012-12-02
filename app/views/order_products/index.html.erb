@@ -20,7 +20,7 @@
     <td><%= order_product.product_id %></td>
     <td><%= Product.find(order_product[:product_id])[:name] %></td>
     <td><%= order_product.quantity %></td>
-    <td><%= order_product.price %></td>
+    <td><%= order_product.price.round(2) %></td>
   </tr>
 <% end %>
 </table>
